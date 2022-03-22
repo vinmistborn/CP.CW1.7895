@@ -4,25 +4,14 @@ using SynConnectDLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application
 {
-    public class SwipeService : ISwipeService
+    public class SwipeService
     {
-        SwipeRepository swipeRepo = new SwipeRepository();
-        Semaphore semaphore = new Semaphore(3, 3);
-
-        public void AddSwipesToDatabase(Terminal terminal)
+        public List<Swipe> RetrieveSwipes(Terminal terminal)
         {
-            terminal.Status = "Waiting";
-            
-            semaphore.WaitOne();
-            
-            terminal.Status = "InProcess";
-
-
             var swipesData = RetriveSwipesData(terminal.IP);
             var studentIds = RetrieveStudentIds(swipesData);
             var timeEvents = RetrieveTimeEvents(swipesData);
@@ -40,13 +29,8 @@ namespace Application
                 };
                 swipes.Add(swipe);
             }
-            swipeRepo.BulkInsert(swipes);
 
-            Thread.Sleep(1000);
-
-            semaphore.Release();
-
-            terminal.Status = "Finished";
+            return swipes;
         }
 
         private string[] RetriveSwipesData(string IpAddress)

@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Progress.cs" />
     <Compile Include="Entities\Swipe.cs" />
     <Compile Include="Entities\Terminal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
