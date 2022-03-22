@@ -3,6 +3,9 @@
     using System;
     using System.Data.Entity.Migrations;
     
+    /// <summary>
+    /// Automatically generated class by Entity Framework with database configurations
+    /// </summary>
     public partial class Init : DbMigration
     {
         public override void Up()

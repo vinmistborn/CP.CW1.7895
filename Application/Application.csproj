@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISwipeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwipeService.cs" />
   </ItemGroup>
