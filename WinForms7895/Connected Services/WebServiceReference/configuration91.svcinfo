@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="39UK7TyYa6871oyHshb4uXY0OMrydwzdf/vwy889LQQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hlxq2Y4BNezSSHaPqrkO+ERJINwYwrbwZe5w02WQSS4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsDualHttpBinding" name="PaymentDuplexEndPoint">
       <properties>
@@ -97,7 +97,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="PaymentDuplexEndPoint" contract="WebServicerReference.IWebService" bindingType="wsDualHttpBinding" address="http://localhost:62754/WebService.svc" bindingConfiguration="PaymentDuplexEndPoint">
+    <endpoint name="PaymentDuplexEndPoint" contract="WebServiceReference.IWebService" bindingType="wsDualHttpBinding" address="http://localhost:62754/WebService.svc" bindingConfiguration="PaymentDuplexEndPoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:62754/WebService.svc</serializedValue>
@@ -112,7 +112,7 @@
           <serializedValue>PaymentDuplexEndPoint</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WebServicerReference.IWebService</serializedValue>
+          <serializedValue>WebServiceReference.IWebService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

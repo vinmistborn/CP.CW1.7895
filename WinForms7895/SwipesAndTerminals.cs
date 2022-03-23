@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.ServiceModel;
 using System.Windows.Forms;
-using WinForms7895.WebServicerReference;
+using WinForms7895.WebServiceReference;
 
 namespace WinForms7895
 {
@@ -15,6 +15,7 @@ namespace WinForms7895
     {
         /*----Initializing the necessary objects----*/
         TerminalRepository terminalRepo = new TerminalRepository();
+        SwipeRepository swipeRepo = new SwipeRepository();
         List<Terminal> terminals = new List<Terminal>();
 
         public SwipesAndTerminals()
@@ -29,7 +30,6 @@ namespace WinForms7895
             //Setting the default background colors of data grid view cells
             dgvTerminals.DefaultCellStyle.SelectionBackColor = dgvTerminals.DefaultCellStyle.BackColor;
             dgvTerminals.DefaultCellStyle.SelectionForeColor = dgvTerminals.DefaultCellStyle.ForeColor;
-
         }
 
         /// <summary>
@@ -37,11 +37,12 @@ namespace WinForms7895
         /// </summary>
         private async void btnStart_Click(object sender, EventArgs e)
         {
+            DeleteSwipes();
+
             //when a user clicks the button,
-            //both exit and the button will be disabled 
+            //buttons will be disabled 
             //until the collection of swipes are fully executed
-            ControlBox = false;
-            btnStart.Enabled = false;
+            DisableControls();
 
             //assigning terminals to data grid view
             dgvTerminals.DataSource = terminals;
@@ -55,9 +56,41 @@ namespace WinForms7895
             
             //once the collecting ends, the status of terminals will be updated to waiting
             UpdateTerminals();
-            //once the terminals update finishes, enable the start and exit buttons
+            //once the terminals update finishes, enable the buttons
+            EnableControls();
+        }
+
+
+        /// <summary>
+        /// event handler for *Show Swipes* button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSwipes_Click(object sender, EventArgs e)
+        {
+            var swipes = swipeRepo.GetSwipes();
+            dgvSwipes.DataSource = swipes;
+        }
+
+        
+        /// <summary>
+        /// Enables buttons for a click event
+        /// </summary>
+        private void EnableControls()
+        {
             btnStart.Enabled = true;
+            btnSwipes.Enabled = true;
             ControlBox = true;
+        }
+
+        /// <summary>
+        /// Disables the buttons from clicking event
+        /// </summary>
+        private void DisableControls()
+        {
+            ControlBox = false;
+            btnStart.Enabled = false;
+            btnSwipes.Enabled = false;
         }
 
 
@@ -116,6 +149,16 @@ namespace WinForms7895
         {
             dgvTerminals.DataSource = updatedTerminals;
             BlinkCell();
+        }
+
+
+        /// <summary>
+        /// Deletes swipes from the database
+        /// </summary>
+        private void DeleteSwipes()
+        {
+            var swipes = swipeRepo.GetSwipes();
+            swipeRepo.DeleteSwipes(swipes);
         }
     }
 }

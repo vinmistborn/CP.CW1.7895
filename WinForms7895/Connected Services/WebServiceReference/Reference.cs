@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinForms7895.WebServicerReference {
+namespace WinForms7895.WebServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebServicerReference.IWebService", CallbackContract=typeof(WinForms7895.WebServicerReference.IWebServiceCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebServiceReference.IWebService", CallbackContract=typeof(WinForms7895.WebServiceReference.IWebServiceCallback))]
     public interface IWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebService/StartCollectingSwipes", ReplyAction="http://tempuri.org/IWebService/StartCollectingSwipesResponse")]
@@ -30,12 +30,12 @@ namespace WinForms7895.WebServicerReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IWebServiceChannel : WinForms7895.WebServicerReference.IWebService, System.ServiceModel.IClientChannel {
+    public interface IWebServiceChannel : WinForms7895.WebServiceReference.IWebService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WebServiceClient : System.ServiceModel.DuplexClientBase<WinForms7895.WebServicerReference.IWebService>, WinForms7895.WebServicerReference.IWebService {
+    public partial class WebServiceClient : System.ServiceModel.DuplexClientBase<WinForms7895.WebServiceReference.IWebService>, WinForms7895.WebServiceReference.IWebService {
         
         public WebServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {

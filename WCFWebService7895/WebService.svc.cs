@@ -26,6 +26,13 @@ namespace WCFWebService7895
         /// </summary>
         ITerminalStatusCallback Callback = OperationContext.Current.GetCallbackChannel<ITerminalStatusCallback>();
         
+        //ITerminalStatusCallback Callback
+        //{
+        //    get
+        //    {
+        //        return OperationContext.Current.GetCallbackChannel<ITerminalStatusCallback>();
+        //    }
+        //}
         /// <summary>
         /// Collects swipes from terminals
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Domain.Entities;
 
 namespace Infrastructure.DAL.Repositories
@@ -18,6 +19,27 @@ namespace Infrastructure.DAL.Repositories
             {
                 dbContext.Swipes.AddRange(swipes);
                 dbContext.SaveChanges();
+            }
+        }
+
+        public List<Swipe> GetSwipes()
+        {
+            using (var dbContext = new AppDbContext())
+            {
+                return dbContext.Swipes.ToList();
+            }
+        }
+
+        public void DeleteSwipes(List<Swipe> swipes)
+        {
+            using (var dbContext = new AppDbContext())
+            {
+                foreach (var swipe in swipes)
+                {
+                    var tempSwipe = dbContext.Swipes.Find(swipe.Id);
+                    dbContext.Swipes.Remove(tempSwipe);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }

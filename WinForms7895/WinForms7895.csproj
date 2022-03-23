@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\WebServicerReference\Reference.cs">
+    <Compile Include="Connected Services\WebServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -83,7 +83,7 @@
     <EmbeddedResource Include="SwipesAndTerminals.resx">
       <DependentUpon>SwipesAndTerminals.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Connected Services\WebServicerReference\WebService.wsdl" />
+    <None Include="Connected Services\WebServiceReference\WebService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Domain.Entities.Terminal.datasource" />
     <None Include="Properties\Settings.settings">
@@ -113,16 +113,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WebServicerReference\" />
+    <WCFMetadataStorage Include="Connected Services\WebServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WebServicerReference\configuration91.svcinfo" />
+    <None Include="Connected Services\WebServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WebServicerReference\configuration.svcinfo" />
+    <None Include="Connected Services\WebServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WebServicerReference\Reference.svcmap">
+    <None Include="Connected Services\WebServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
