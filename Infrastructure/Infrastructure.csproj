@@ -60,6 +60,14 @@
     <Compile Include="Migrations\202203220201190_Init.designer.cs">
       <DependentUpon>202203220201190_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203240634066_SeedTerminals.cs" />
+    <Compile Include="Migrations\202203240634066_SeedTerminals.designer.cs">
+      <DependentUpon>202203240634066_SeedTerminals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203240645427_SeedTableTerminals.cs" />
+    <Compile Include="Migrations\202203240645427_SeedTableTerminals.designer.cs">
+      <DependentUpon>202203240645427_SeedTableTerminals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +84,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202203220201190_Init.resx">
       <DependentUpon>202203220201190_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203240634066_SeedTerminals.resx">
+      <DependentUpon>202203240634066_SeedTerminals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203240645427_SeedTableTerminals.resx">
+      <DependentUpon>202203240645427_SeedTableTerminals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

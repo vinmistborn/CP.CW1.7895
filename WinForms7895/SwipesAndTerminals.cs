@@ -38,6 +38,7 @@ namespace WinForms7895
         private async void btnStart_Click(object sender, EventArgs e)
         {
             DeleteSwipes();
+            dgvSwipes.DataSource = null;
 
             //when a user clicks the button,
             //buttons will be disabled 
@@ -158,7 +159,10 @@ namespace WinForms7895
         private void DeleteSwipes()
         {
             var swipes = swipeRepo.GetSwipes();
-            swipeRepo.DeleteSwipes(swipes);
+            if(swipes != null)
+            {
+                swipeRepo.DeleteSwipes(swipes);
+            }
         }
     }
 }

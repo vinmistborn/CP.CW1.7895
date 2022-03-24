@@ -10,7 +10,7 @@ namespace Infrastructure.DAL
     {
         public AppDbContext() : base("AppDb7895")
         {
-
+            
         }
 
         /// <summary>
